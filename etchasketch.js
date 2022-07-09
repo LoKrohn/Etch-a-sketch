@@ -18,9 +18,15 @@ function draw() {
     })
 }
 
+function shake() {
+    boxes.forEach(box => box.style.backgroundColor = 'rgb(226, 218, 202)');
+    console.log("test");
+}
+
+const button = document.getElementById("clear");
+//console.log(button);
+
+button.addEventListener("click", shake);
+
 draw();
 
-/*function eraseAllColor() {
-    var gridPixels = container.querySelectorAll('div');
-    gridPixels.forEach(gridPixel => gridPixel.style.backgroundColor = '#ffffff');
-} */

@@ -1,3 +1,4 @@
+//create boxes for drawing field 
 const container = document.getElementById("grid");
 
 for (let i = 0; i<1600; i++) {
@@ -6,6 +7,7 @@ for (let i = 0; i<1600; i++) {
     container.appendChild(div);
 }
 
+// change box color on mouseover 
 const boxes = document.querySelectorAll(".box");
 
 function changeColor(){
@@ -18,15 +20,23 @@ function draw() {
     })
 }
 
+draw();
+
+// clear drawing field and shakte etchasketch on "shake" button click
+
 function shake() {
     boxes.forEach(box => box.style.backgroundColor = 'rgb(226, 218, 202)');
-    console.log("test");
-}
+    container.classList.add("shake");
+    container.addEventListener('animationend', function(){
+        container.classList.remove("shake");
+    }, {once:true});
+    }
+
 
 const button = document.getElementById("clear");
-//console.log(button);
 
 button.addEventListener("click", shake);
 
-draw();
+
+
 
